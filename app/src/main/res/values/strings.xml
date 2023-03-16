@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Intuch</string>
+    <string name="unknown_time_text">Unknown</string>
+    <string name="reach_out_button">Reach out!</string>
+    <string name="reach_out_text">Time to reach out!</string>
+    <string name="notification_title">Reach out to </string>
+    <string name="notification_body">It\'s time to get in touch</string>
+</resources>

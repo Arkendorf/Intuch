@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/contact"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:padding="10dp"
+    android:background="@drawable/contact_background"
+    android:layout_marginBottom="10dp"
+    android:animateLayoutChanges="true"
+    >
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/last_contacted"
+        android:paddingBottom="5dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/last_contacted"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        android:paddingBottom="5dp"
+        />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/notify"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/last_contacted"
+        app:layout_constraintBottom_toBottomOf="@id/last_contacted"
+        android:layout_marginBottom="-10dp"
+        android:theme="@style/Switch"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/extras"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/last_contacted"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:visibility="visible"
+        >
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/notify_slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:valueFrom="@integer/saved_min_notify_time_key"
+            android:valueTo="@integer/saved_max_notify_time_key"
+            android:stepSize="@integer/saved_step_notify_time_key"
+            />
+
+        <Button
+            android:id="@+id/action_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/notify_slider"
+            android:text="@string/reach_out_button"
+            android:theme="@style/Button"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
